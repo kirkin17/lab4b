@@ -3,45 +3,52 @@ using namespace std;
 
 int main()
 {
+	setlocale(LC_ALL, "Russian");
 	int a[5], b[5];
 	int tmpa,tmpb;
+	//ввод
 	cout << "Ввод матрицы А: \n";
-	for (int i; i <= 5; i++)
+	for (int i = 0; i <= 4; i++)
 	{
 		cin >> a[i];
 	}
 	cout << "Ввод матрицы B: \n";
-	for (int i; i <= 4; i++)
+	for (int i = 0; i <= 4; i++)
 	{
 		cin >> b[i];
 	}
-	for (int i; i <= 4; i++)
+
+
+	for (int i = 0; i <= 4; i++)
 	{
 		if (a[i] < 0) 
 		{ 
 			tmpb = a[i];
-			if (b[i] == 0) { b[i] = tmpb; }
-			else 
+			for (int k = 0; k <= 4; k++)
 			{
-				for (int k; k <= 4; k++)
-				{
-					if (b[k] == 0) { b[k] = tmpb; };
-					if (b[k] > 0) 
-					{ 
-						tmpa = b[k];
-						if (a[k] == 0) { a[k] = tmpa; }
-						else 
-						{
-							for (int j; j <= 4; j++)
-							{
-								if (a[i]==0) {a[i]=tmpa }
-								if (a[i]) 
-							}
-						}
-					}
+				if (b[k] == 0) { b[k] = tmpb; break; };
+				if (b[k] > 0) 
+				{ 
+					a[i] = b[k]; 
+					b[k] = tmpb; 
+					break; 
 				}
 			}
-		};
-		if (b[i] >= 0) { tmpa = b[i]; };
+		}
+		if (b[i] > 0) { tmpa = b[i]; };
+	}
+
+
+	//вывод
+
+	cout << endl << "Результат: \n";
+	for (int i = 0; i <= 4; i++)
+	{
+		cout << a[i] << endl;
+	}
+	cout << endl;
+	for (int i = 0; i <= 4; i++)
+	{
+		cout << b[i] << endl;
 	}
 }
