@@ -28,17 +28,17 @@ int main()
 				if (b[k] > 0) { a[i] = b[k]; b[k] = 0; break; }
 			}
 		}
-		if (a[i] < 0) 
+		if (a[i] < 0)
 		{
 			tmp = a[i];
 			for (int k = 0; k <= 4; k++)
 			{
 				if (b[k] == 0) { b[k] = tmp; break; };
-				if (b[k] > 0) 
-				{ 
-					a[i] = b[k]; 
-					b[k] = tmp; 
-					break; 
+				if (b[k] > 0)
+				{
+					a[i] = b[k];
+					b[k] = tmp;
+					break;
 				}
 			}
 		}
@@ -48,6 +48,7 @@ int main()
 		if (a[i] < 0) { a[i] = 0; }
 		if (b[i] > 0) { b[i] = 0; }
 	}
+	
 
 	//вывод
 
