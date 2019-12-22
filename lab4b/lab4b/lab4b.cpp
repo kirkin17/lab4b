@@ -25,7 +25,7 @@ int main()
 		{
 			for (int k = 0; k <= 4; k++)
 			{
-				if (b[k] > 0) { a[i] = b[k]; continue; }
+				if (b[k] > 0) { a[i] = b[k]; b[k] = 0; break; }
 			}
 		}
 		if (a[i] < 0) 
