@@ -5,7 +5,7 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	int a[5], b[5];
-	int tmpa,tmpb;
+	int tmp;
 	//ввод
 	cout << "Ввод матрицы А: \n";
 	for (int i = 0; i <= 4; i++)
@@ -21,23 +21,33 @@ int main()
 
 	for (int i = 0; i <= 4; i++)
 	{
-		if (a[i] < 0) 
-		{ 
-			tmpb = a[i];
+		if (a[i] == 0)
+		{
 			for (int k = 0; k <= 4; k++)
 			{
-				if (b[k] == 0) { b[k] = tmpb; break; };
+				if (b[k] > 0) { a[i] = b[k]; continue; }
+			}
+		}
+		if (a[i] < 0) 
+		{
+			tmp = a[i];
+			for (int k = 0; k <= 4; k++)
+			{
+				if (b[k] == 0) { b[k] = tmp; break; };
 				if (b[k] > 0) 
 				{ 
 					a[i] = b[k]; 
-					b[k] = tmpb; 
+					b[k] = tmp; 
 					break; 
 				}
 			}
 		}
-		if (b[i] > 0) { tmpa = b[i]; };
 	}
-
+	for (int i = 0; i <= 4; i++)
+	{
+		if (a[i] < 0) { a[i] = 0; }
+		if (b[i] > 0) { b[i] = 0; }
+	}
 
 	//вывод
 
